@@ -17,4 +17,15 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <!-- styles.xml -->
+    <style name="passo">
+        <item name="android:textSize">
+            24sp
+        </item>
+
+        <item name="android:textColor">
+            #DF9F24
+        </item>
+    </style>
+
 </resources>

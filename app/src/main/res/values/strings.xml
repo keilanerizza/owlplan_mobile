@@ -6,4 +6,8 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="passo_turma">1. Crie uma turma...</string>
+    <string name="passo_form">2. Preencha um formulário...</string>
+    <string name="passo_download">3. Baixe o planejamento !</string>
+
 </resources>
