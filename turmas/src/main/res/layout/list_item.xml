@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/background_light"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -12,9 +13,10 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
-        android:elevation="5px"
+        android:accessibilityLiveRegion="none"
+        android:background="?android:attr/windowBackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,7 +24,7 @@
 
     <TextView
         android:id="@+id/apelido_turma"
-        android:layout_width="89.94dp"
+        android:layout_width="215dp"
         android:layout_height="25.63dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
@@ -52,9 +54,6 @@
         android:id="@+id/divider"
         android:layout_width="0dp"
         android:layout_height="1dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:background="?android:attr/listDivider"
         app:layout_constraintBottom_toTopOf="@+id/review"
         app:layout_constraintEnd_toEndOf="@+id/pooch"
@@ -69,10 +68,9 @@
         android:layout_height="27dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginEnd="8dp"
-        android:background="?android:attr/colorBackgroundFloating"
+        android:background="?android:attr/windowBackground"
         android:gravity="center_horizontal"
-        android:text="VIZUALIZAR"
+        android:text="VISUALIZAR"
         android:textAlignment="center"
         android:textColor="@color/colorAccent"
         android:textSize="18sp"
@@ -87,8 +85,11 @@
         android:layout_alignParentTop="true"
         android:background="@android:color/darker_gray"
         app:layout_constraintBottom_toBottomOf="@+id/pooch"
+        app:layout_constraintEnd_toEndOf="@+id/pooch"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/pooch"
         app:layout_constraintTop_toTopOf="@+id/pooch"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="28dp" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints" />
 
 </android.support.constraint.ConstraintLayout>

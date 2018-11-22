@@ -1,1 +1,1 @@
-include ':app', ':turmas'
+include ':app', ':turmas', ':calendario'
