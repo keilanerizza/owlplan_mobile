@@ -1,23 +1,22 @@
 package keilane.com.turmas.domain;
 
-import android.content.Context;
-import android.widget.BaseAdapter;
-
+import android.app.Activity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.TextView;
+
 import java.util.List;
 
-public class TurmaAdapter extends BaseAdapter {
-    Context ctx;
-    List<Turma> lista;
+import keilane.com.turmas.R;
 
-    public TurmaAdapter(Context ctx, List<Turma> lista) {
+public class TurmaAdapter extends BaseAdapter {
+    private Activity ctx;
+    private List<Turma> lista;
+
+    public TurmaAdapter(Activity ctx, List<Turma> lista) {
         this.ctx = ctx;
         this.lista = lista;
-    }
-
-    @Override
-    public void notifyDataSetChanged() {
     }
 
     @Override
@@ -32,11 +31,25 @@ public class TurmaAdapter extends BaseAdapter {
 
     @Override
     public long getItemId(int i) {
-        return i;
+        return 0L;
     }
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        return view;
+        //1º passo
+        Turma turma = lista.get(i);
+
+        //2º passo
+        View linha = ctx.getLayoutInflater().inflate(R.layout.list_item, viewGroup, false);
+//        LayoutInflater.from(ctx).inflate(R.layout.list_item, null);
+
+        //3º passo
+        TextView apelido = linha.findViewById(R.id.apelido_turma);
+        TextView periodo = linha.findViewById(R.id.turno_turma);
+
+        apelido.setText(turma.getApelido());
+        periodo.setText(turma.getPeriodo());
+
+        return linha;
     }
 }

@@ -1,7 +1,5 @@
 package keilane.com.turmas.domain;
 
-import com.owlplan.domain.Turma;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
