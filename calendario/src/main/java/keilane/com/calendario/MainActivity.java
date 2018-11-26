@@ -14,21 +14,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final CalendarView calendarView = findViewById(R.id.calendarView1);
+        /*final CalendarView calendarView = findViewById(R.id.calendarView1);
 
         // quando selecionado alguma data diferente da padrão
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
 
             @Override
-            public void onSelectedDayChange(CalendarView view, int year,
-                                            int month, int dayOfMonth) {
-                Intent intent = new Intent(MainActivity.this,
-                        ClasseCapturaDados.class);
-                intent.putExtra("dataLongMiliseconds",
-                        (Long) calendarView.getDate());
+            public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
+                Intent intent = new Intent(MainActivity.this, ClasseCapturaDados.class);
+                intent.putExtra("dataLongMiliseconds", (Long) calendarView.getDate());
                 startActivity(intent);
-
             }
-        });
+        });*/
     }
 }

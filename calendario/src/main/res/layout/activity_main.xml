@@ -8,10 +8,31 @@
 
     <CalendarView
         android:id="@+id/calendarView1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="371dp"
+        android:layout_height="311dp"
         android:layout_alignParentLeft="true"
-        android:layout_marginTop="14dp"
-        android:showWeekNumber="false"/>
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:showWeekNumber="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.125" />
+
+    <Button
+        android:id="@+id/add_evento"
+        android:layout_width="117dp"
+        android:layout_height="42dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="28dp"
+        android:background="@color/colorAccent"
+        android:text="+ EVENTO"
+        android:textColor="?attr/colorBackgroundFloating"
+        android:textSize="18sp"
+        android:typeface="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
