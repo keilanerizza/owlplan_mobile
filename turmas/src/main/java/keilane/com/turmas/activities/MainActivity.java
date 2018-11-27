@@ -33,15 +33,16 @@ public class MainActivity extends AppCompatActivity {
         InterfaceDeServicos services = RetrofitService.criaRetrofit().create(InterfaceDeServicos.class);
 
         Call<List<Turma>> call = services.getTurmas();
-
+        Log.i("lista", "1. passei aqui");
         call.enqueue(new Callback<List<Turma>>() {
             public void onResponse(Call<List<Turma>> call, Response<List<Turma>> response) {
                 List<Turma> listaTurmas = response.body();
+                Log.i("lista", listaTurmas.size() + "");
                 lista.setAdapter(new TurmaAdapter(MainActivity.this, listaTurmas));
             }
 
             public void onFailure(Call<List<Turma>> call, Throwable t) {
-                Log.i("debug:", t.getMessage());
+                Log.i("lista:", t.getMessage());
             }
         });
     }

@@ -9,5 +9,6 @@
     <string name="passo_turma">1. Crie uma turma...</string>
     <string name="passo_form">2. Preencha um formulário...</string>
     <string name="passo_download">3. Baixe o planejamento !</string>
+    <string name="logout">logout</string>
 
 </resources>
