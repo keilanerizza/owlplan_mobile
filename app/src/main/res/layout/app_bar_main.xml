@@ -20,6 +20,13 @@
 
     </android.support.design.widget.AppBarLayout>
 
+    <LinearLayout
+        android:id="@+id/conteudo_dinamico"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" />
+
+
     <include layout="@layout/content_main" />
 
     <android.support.design.widget.FloatingActionButton

@@ -1,5 +1,6 @@
 package keilane.com.owlplan;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -24,6 +25,18 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        /*//recupera o id do recurso de layout do miolo
+        int layout_miolo = savedInstanceState.getInt("miolo");
+
+        // recupera a instancia do LinearLayout onde será adicionado o miolo da tela
+        LinearLayout conteudo_dinamico = findViewById(R.id.conteudo_dinamico);
+
+        // infla a tela
+        View miolo = getLayoutInflater().inflate(layout_miolo, conteudo_dinamico, false);
+
+        // adiciona a view inflada na tela
+        conteudo_dinamico.addView(miolo);
+*/
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,9 +96,9 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_turmas) {
-
+            startActivity(new Intent(this, keilane.com.turmas.activities.MainActivity.class));
         } else if (id == R.id.nav_calendario) {
-
+            startActivity(new Intent(this, keilane.com.calendario.MainActivity.class));
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {

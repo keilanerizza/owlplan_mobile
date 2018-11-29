@@ -23,8 +23,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        lista = findViewById(R.id.list);
+        /*if (savedInstanceState == null)
+            savedInstanceState = new Bundle();
+        savedInstanceState.putInt("miolo", R.layout.activity_turma);*/
+        setContentView(R.layout.activity_turma);
+        lista = findViewById(R.id.lista);
         imprimeLista();
     }
 
@@ -33,11 +36,9 @@ public class MainActivity extends AppCompatActivity {
         InterfaceDeServicos services = RetrofitService.criaRetrofit().create(InterfaceDeServicos.class);
 
         Call<List<Turma>> call = services.getTurmas();
-        Log.i("lista", "1. passei aqui");
         call.enqueue(new Callback<List<Turma>>() {
             public void onResponse(Call<List<Turma>> call, Response<List<Turma>> response) {
                 List<Turma> listaTurmas = response.body();
-                Log.i("lista", listaTurmas.size() + "");
                 lista.setAdapter(new TurmaAdapter(MainActivity.this, listaTurmas));
             }
 
