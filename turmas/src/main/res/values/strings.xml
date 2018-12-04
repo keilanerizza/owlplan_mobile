@@ -3,7 +3,7 @@
     <string name="apelido_turma">G II</string>
     <string name="turno_turma">MATUTINO</string>
 
-    <string-array name="brew_array">
+    <string-array name="lista_escolas">
         <item>Cappuccino</item>
         <item>Espresso</item>
         <item>Mocha</item>

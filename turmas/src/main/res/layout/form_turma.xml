@@ -13,7 +13,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:fontFamily="@font/abeezee"
         android:text="Nova Turma"
         android:textAllCaps="false"
         android:textColor="@color/colorPrimaryDark"

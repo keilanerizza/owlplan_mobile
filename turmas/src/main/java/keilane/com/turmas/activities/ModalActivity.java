@@ -1,78 +1,80 @@
 package keilane.com.turmas.activities;
 
-import android.app.AlertDialog;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import keilane.com.servicos.services.RetrofitService;
+import keilane.com.turmas.InterfaceDeServicos;
 import keilane.com.turmas.R;
+import keilane.com.turmas.domain.Escola;
+import keilane.com.turmas.domain.Turma;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class ModalActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private Spinner spinner;
-    private static final String[] paths = {"item 1", "item 2", "item 3"};
+    List<Escola> listaNomeEscolas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.form_turma);
+        listaNomeEscolas = new ArrayList<Escola>();
+        imprimeListaEscolas();
+    }
 
-        spinner = (Spinner)findViewById(R.id.spinner);
+    private void imprimeListaEscolas() {
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                .createFromResource(this, R.array.brew_array,
-                        android.R.layout.simple_spinner_item);
+        InterfaceDeServicos services = RetrofitService.criaRetrofit().create(InterfaceDeServicos.class);
+
+        Call<List<Escola>> call = services.getEscolas();
+        call.enqueue(new Callback<List<Escola>>() {
+
+            @Override
+            public void onResponse(Call<List<Escola>> call, Response<List<Escola>> response) {
+                listaNomeEscolas = response.body();
+                preencheSpinner();
+            }
+
+            @Override
+            public void onFailure(Call<List<Escola>> call, Throwable t) {
+                Log.i("lista escolas:", t.getMessage());
+            }
+        });
+
+
+    }
+
+    private void preencheSpinner() {
+        spinner = (Spinner) findViewById(R.id.spinner);
+        List<String> nomes = new ArrayList<String>();
+        for (Escola e : listaNomeEscolas) {
+            nomes.add(e.getUsuarioNome());
+        }
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(ModalActivity.this, android.R.layout.simple_spinner_dropdown_item, nomes);
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
-        // onBackPressed();
     }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
-        switch (position) {
-            case 0:
-                // Whatever you want to happen when the first item gets selected
-                break;
-            case 1:
-                // Whatever you want to happen when the second item gets selected
-                break;
-            case 2:
-                // Whatever you want to happen when the thrid item gets selected
-                break;
-
-        }
+        new Turma();
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
-
-    /*public void onBackPressed() {
-        AlertDialog.Builder alert = new AlertDialog.Builder(this);
-        alert.setTitle("Do you want to logout?");
-        // alert.setMessage("Message");
-
-        alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
-                //Your action here
-            }
-        });
-
-        alert.setNegativeButton("Cancel",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int whichButton) {
-                    }
-                });
-
-        alert.show();
-
-    }*/
 }

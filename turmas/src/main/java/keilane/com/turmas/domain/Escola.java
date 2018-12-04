@@ -10,18 +10,18 @@ public class Escola implements Serializable {
     private Integer id;
     private String telefone;
 
-    private Usuario usuario;
+    private String usuarioNome;
 
     private List<Turma> turmas = new ArrayList<>();
 
     public Escola() {
     }
 
-    public Escola(Integer id, String telefone, Usuario usuario) {
+    public Escola(Integer id, String telefone, String nome) {
         super();
         this.id = id;
         this.telefone = telefone;
-        this.usuario = usuario;
+        this.usuarioNome = nome;
     }
 
     public Integer getId() {
@@ -48,12 +48,12 @@ public class Escola implements Serializable {
         this.turmas = turmas;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public String getUsuarioNome() {
+        return usuarioNome;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setUsuarioNome(Usuario usuario) {
+        this.usuarioNome = usuarioNome;
     }
 }
 
