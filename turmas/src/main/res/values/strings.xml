@@ -2,12 +2,4 @@
     <string name="app_name">Turmas</string>
     <string name="apelido_turma">G II</string>
     <string name="turno_turma">MATUTINO</string>
-
-    <string-array name="lista_escolas">
-        <item>Cappuccino</item>
-        <item>Espresso</item>
-        <item>Mocha</item>
-        <item>Caffè Americano</item>
-        <item>Cafe Zorro</item>
-    </string-array>
 </resources>

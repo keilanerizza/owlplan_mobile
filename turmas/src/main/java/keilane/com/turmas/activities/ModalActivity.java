@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +23,8 @@ import retrofit2.Response;
 
 public class ModalActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
+    InterfaceDeServicos services = RetrofitService.criaRetrofit().create(InterfaceDeServicos.class);
+
     private Spinner spinner;
     List<Escola> listaNomeEscolas;
 
@@ -34,8 +37,6 @@ public class ModalActivity extends AppCompatActivity implements AdapterView.OnIt
     }
 
     private void imprimeListaEscolas() {
-
-        InterfaceDeServicos services = RetrofitService.criaRetrofit().create(InterfaceDeServicos.class);
 
         Call<List<Escola>> call = services.getEscolas();
         call.enqueue(new Callback<List<Escola>>() {
@@ -70,11 +71,18 @@ public class ModalActivity extends AppCompatActivity implements AdapterView.OnIt
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
-        new Turma();
+        String escola = spinner.getSelectedItem().toString();
+
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
+    }
+
+    public void criarTurma(View view) {
+        String apelido = findViewById(R.id.apelido_turma).toString();
+        String serie = findViewById(R.id.serie_turma).toString();
+        String turno = findViewById(R.id.turno_turma).toString();
 
     }
 }

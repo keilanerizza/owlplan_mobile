@@ -12,21 +12,21 @@ public class Turma implements Serializable {
     private String serie;
     private String periodo;
 
-    private Professor professor;
+    private Integer professorId;
 
-    private Escola escola;
+    private Integer escolaId;
 
     public Turma() {
     }
 
-    public Turma(Integer id, String apelido, String serie, String periodo, Professor professor, Escola escola) {
+    public Turma(Integer id, String apelido, String serie, String periodo, Integer professor, Integer escola) {
         super();
         this.id = id;
         this.apelido = apelido;
         this.serie = serie;
         this.periodo = periodo;
-        this.professor = professor;
-        this.escola = escola;
+        this.professorId = professor;
+        this.escolaId = escola;
     }
 
     public Integer getId() {
@@ -61,19 +61,19 @@ public class Turma implements Serializable {
         this.periodo = periodo;
     }
 
-    public Professor getProfessor() {
-        return professor;
+    public Integer getProfessor() {
+        return professorId;
     }
 
-    public void setProfessor(Professor professor) {
-        this.professor = professor;
+    public void setProfessor(Integer professor) {
+        this.professorId = professor;
     }
 
-    public Escola getEscola() {
-        return escola;
+    public Integer getEscola() {
+        return escolaId;
     }
 
-    public void setEscola(Escola escola) {
-        this.escola = escola;
+    public void setEscola(Integer escola) {
+        this.escolaId = escola;
     }
 }
