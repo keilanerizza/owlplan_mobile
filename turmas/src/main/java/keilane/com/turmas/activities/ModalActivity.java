@@ -6,6 +6,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -27,6 +29,7 @@ public class ModalActivity extends AppCompatActivity implements AdapterView.OnIt
 
     private Spinner spinner;
     List<Escola> listaNomeEscolas;
+    int idEscolaSelecionada;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +74,8 @@ public class ModalActivity extends AppCompatActivity implements AdapterView.OnIt
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
-        String escola = spinner.getSelectedItem().toString();
+        //String escola = spinner.getSelectedItem().toString();
+        idEscolaSelecionada = listaNomeEscolas.get(position).getId();
 
     }
 
@@ -80,9 +84,27 @@ public class ModalActivity extends AppCompatActivity implements AdapterView.OnIt
     }
 
     public void criarTurma(View view) {
-        String apelido = findViewById(R.id.apelido_turma).toString();
-        String serie = findViewById(R.id.serie_turma).toString();
-        String turno = findViewById(R.id.turno_turma).toString();
+        String apelido = ((TextView)findViewById(R.id.apelido_turma)).getText().toString();
+        String serie = ((TextView)findViewById(R.id.serie_turma)).getText().toString();
+        RadioGroup rg = findViewById(R.id.turno_turma);
+        int radioButtonID = rg.getCheckedRadioButtonId();
+        RadioButton radioButton = (RadioButton)rg.findViewById(radioButtonID);
+        String periodo = radioButton.getText().toString();
+
+
+        Turma turma = new Turma(null, apelido, serie, periodo, 5, idEscolaSelecionada);
+
+        Call<Turma> call = services.criaTurma(turma);
+        call.enqueue(new Callback<Turma>() {
+
+            @Override
+            public void onResponse(Call<Turma> call, Response<Turma> response) {
+            }
+
+            @Override
+            public void onFailure(Call<Turma> call, Throwable t) {
+            }
+        });
 
     }
 }

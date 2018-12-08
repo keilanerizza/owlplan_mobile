@@ -122,6 +122,7 @@
         android:layout_marginBottom="16dp"
         android:background="@android:color/background_light"
         android:text="CRIAR"
+        android:onClick="criarTurma"
         android:textColor="#43B640"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -151,7 +152,6 @@
         android:text="LIMPAR"
         android:textColor="#30AAEE"
         android:textSize="18sp"
-        android:onClick="criarTurma"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/criar_turma"
         app:layout_constraintStart_toEndOf="@+id/cancelar_turma" />
