@@ -35,6 +35,7 @@ public class ModalActivity extends AppCompatActivity implements AdapterView.OnIt
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.form_turma);
+
         listaNomeEscolas = new ArrayList<Escola>();
         imprimeListaEscolas();
     }
@@ -106,5 +107,17 @@ public class ModalActivity extends AppCompatActivity implements AdapterView.OnIt
             }
         });
 
+    }
+
+    public void limparForm(View view) {
+        TextView apelido = findViewById(R.id.apelido_turma);
+        apelido.setText("");
+
+        TextView serie = findViewById(R.id.serie_turma);
+        serie.setText("");
+    }
+
+    public void cancelarForm(View view) {
+        finish();
     }
 }
