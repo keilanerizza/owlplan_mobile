@@ -71,6 +71,7 @@
         android:background="?android:attr/windowBackground"
         android:gravity="center_horizontal"
         android:text="VISUALIZAR"
+        android:onClick="visualizarTurma"
         android:textAlignment="center"
         android:textColor="@color/colorAccent"
         android:textSize="18sp"

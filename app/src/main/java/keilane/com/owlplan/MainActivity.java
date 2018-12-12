@@ -13,7 +13,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -25,18 +24,6 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        /*//recupera o id do recurso de layout do miolo
-        int layout_miolo = savedInstanceState.getInt("miolo");
-
-        // recupera a instancia do LinearLayout onde será adicionado o miolo da tela
-        LinearLayout conteudo_dinamico = findViewById(R.id.conteudo_dinamico);
-
-        // infla a tela
-        View miolo = getLayoutInflater().inflate(layout_miolo, conteudo_dinamico, false);
-
-        // adiciona a view inflada na tela
-        conteudo_dinamico.addView(miolo);
-*/
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
