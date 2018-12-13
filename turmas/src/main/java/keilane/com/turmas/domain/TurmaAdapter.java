@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -49,6 +51,15 @@ public class TurmaAdapter extends BaseAdapter {
 
         apelido.setText(turma.getApelido());
         periodo.setText(turma.getPeriodo());
+
+        ImageView more = linha.findViewById(R.id.imageView2);
+        ctx.registerForContextMenu(more);
+        more.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ctx.openContextMenu(view);
+            }
+        });
 
         return linha;
     }

@@ -15,6 +15,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
+        android:focusable="false"
         android:accessibilityLiveRegion="none"
         android:background="?android:attr/windowBackground"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,12 +25,13 @@
 
     <TextView
         android:id="@+id/apelido_turma"
-        android:layout_width="215dp"
+        android:layout_width="200dp"
         android:layout_height="25.63dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
+        android:focusable="false"
         android:lineSpacingExtra="11sp"
         android:text="@string/apelido_turma"
         android:textColor="@android:color/black"
@@ -47,6 +49,7 @@
         android:lineSpacingExtra="-1sp"
         android:text="@string/turno_turma"
         android:textSize="18sp"
+        android:focusable="false"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/apelido_turma" />
 
@@ -54,6 +57,7 @@
         android:id="@+id/divider"
         android:layout_width="0dp"
         android:layout_height="1dp"
+        android:focusable="false"
         android:background="?android:attr/listDivider"
         app:layout_constraintBottom_toTopOf="@+id/review"
         app:layout_constraintEnd_toEndOf="@+id/pooch"
@@ -71,6 +75,7 @@
         android:background="?android:attr/windowBackground"
         android:gravity="center_horizontal"
         android:text="VISUALIZAR"
+        android:focusable="false"
         android:onClick="visualizarTurma"
         android:textAlignment="center"
         android:textColor="@color/colorAccent"
@@ -84,6 +89,7 @@
         android:layout_height="108.95dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
+        android:focusable="false"
         android:background="@android:color/darker_gray"
         app:layout_constraintBottom_toBottomOf="@+id/pooch"
         app:layout_constraintEnd_toEndOf="@+id/pooch"
@@ -92,5 +98,18 @@
         app:layout_constraintTop_toTopOf="@+id/pooch"
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/turno_turma"
+        app:layout_constraintEnd_toEndOf="@+id/pooch"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/apelido_turma"
+        app:layout_constraintTop_toTopOf="@+id/apelido_turma"
+        app:srcCompat="@drawable/more" />
 
 </android.support.constraint.ConstraintLayout>

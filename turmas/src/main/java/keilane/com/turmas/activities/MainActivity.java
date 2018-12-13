@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_turma);
         lista = findViewById(R.id.lista);
-
+        //registerForContextMenu(lista);
         imprimeLista();
     }
 
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<List<Turma>> call, Response<List<Turma>> response) {
                 List<Turma> listaTurmas = response.body();
                 lista.setAdapter(new TurmaAdapter(MainActivity.this, listaTurmas));
-                registerForContextMenu(lista);
+
             }
 
             public void onFailure(Call<List<Turma>> call, Throwable t) {
@@ -76,6 +76,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void visualizarTurma(View view) {
-        startActivity(new Intent(this, keilane.com.planejamentos.MainActivity));
+        startActivity(new Intent(this, keilane.com.planejamentos.MainActivity.class));
     }
 }
