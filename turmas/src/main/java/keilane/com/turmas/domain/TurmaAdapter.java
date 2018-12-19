@@ -11,6 +11,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import keilane.com.turmas.R;
+import keilane.com.turmas.activities.MainActivity;
 
 public class TurmaAdapter extends BaseAdapter {
     private Activity ctx;
@@ -37,7 +38,7 @@ public class TurmaAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
+    public View getView(final int i, View view, ViewGroup viewGroup) {
         //1º passo
         Turma turma = lista.get(i);
 
@@ -45,8 +46,10 @@ public class TurmaAdapter extends BaseAdapter {
         View linha = ctx.getLayoutInflater().inflate(R.layout.list_item, viewGroup, false);
 //        LayoutInflater.from(ctx).inflate(R.layout.list_item, null);
 
+
+
         //3º passo
-        TextView apelido = linha.findViewById(R.id.apelido_turma);
+        final TextView apelido = linha.findViewById(R.id.apelido_turma);
         TextView periodo = linha.findViewById(R.id.turno_turma);
 
         apelido.setText(turma.getApelido());
@@ -57,10 +60,14 @@ public class TurmaAdapter extends BaseAdapter {
         more.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                MainActivity m = (MainActivity)ctx;
+                m.setPosicao(i);
                 ctx.openContextMenu(view);
             }
         });
 
         return linha;
     }
+
+
 }

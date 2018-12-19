@@ -11,9 +11,11 @@ import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+
 public class RetrofitService {
 
-    private static String BASE_URL = "http://10.10.20.239:8080/";
+    //private static String BASE_URL = "http://10.10.20.252:8080/";
+    private static String BASE_URL = "http://192.168.0.107:8080/";
 
 
     @NonNull
@@ -25,8 +27,8 @@ public class RetrofitService {
 
         OkHttpClient okHttpClient = new OkHttpClient()
                 .newBuilder()
-                .connectTimeout(30, TimeUnit.SECONDS)
-                .readTimeout(30, TimeUnit.SECONDS)
+                .connectTimeout(3, TimeUnit.SECONDS)
+                .readTimeout(3, TimeUnit.SECONDS)
                 .build();
 
         return new Retrofit.Builder()
