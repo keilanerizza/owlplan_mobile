@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "211906558080",
+    "firebase_url": "https://owlplan-c2faf.firebaseio.com",
+    "project_id": "owlplan-c2faf",
+    "storage_bucket": "owlplan-c2faf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:211906558080:android:b11f6da7737fb335",
+        "android_client_info": {
+          "package_name": "keilane.com.owlplan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "211906558080-o4ocb748ggocd9den90s88io8mvq4g93.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "keilane.com.owlplan",
+            "certificate_hash": "9d9587a6ae1b634cc7337bfde33eb2e749bbd360"
+          }
+        },
+        {
+          "client_id": "211906558080-k04i1bmid5kkocudj45skasq0eosl4mo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwujH8yztvASCd87RPdndf1vGQ0NkJJFQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "211906558080-k04i1bmid5kkocudj45skasq0eosl4mo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

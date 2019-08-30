@@ -39,7 +39,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_turma);
         lista = findViewById(R.id.lista);
         //registerForContextMenu(lista);
-        imprimeLista();
+        try{
+            imprimeLista();
+        } catch (Exception e){
+            Log.e("api", String.valueOf(e.getCause()));
+        }
+
     }
 
     public void setPosicao(int posicao) {
