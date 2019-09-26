@@ -117,7 +117,7 @@ public class ModalActivity extends AppCompatActivity implements AdapterView.OnIt
         RadioButton radioButton = (RadioButton) rg.findViewById(radioButtonID);
         String periodo = radioButton.getText().toString();
         
-        turma = new Turma(null, apelido, serie, periodo, 5, idEscolaSelecionada);
+        turma = new Turma(null, apelido, serie, periodo, 3, idEscolaSelecionada);
         
         Call<Turma> call = null;
         String msg = "";
@@ -145,7 +145,6 @@ public class ModalActivity extends AppCompatActivity implements AdapterView.OnIt
                 Log.e("Erro: ","Metodo delete da classe MainActivity: "+t.getMessage());
             }
         });
-
     }
 
     public void editarTurma() {
